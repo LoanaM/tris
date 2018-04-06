@@ -1,18 +1,27 @@
 var xox = true;
+count = 0;
 
 
 $('.block').click(function(){
-  if (xox) {
-    $(this).text('X');
-    xox = false;
+  if ($(this).text()==""){
+    do {
+      nameplayer1 = $('#player1').val()
+      nameplayer2 = $('#player2').val()
+        if (xox) {
+          $(this).text('X');
+          xox = false;
+        }
+        else {
+          $(this).text('O');
+          xox = true;
+        }
+      xwin();
+      owin();
+      count++
+    } while (count>9);
   }
-  else {
-    $(this).text('O');
-    xox = true;
-  }
-  xwin();
-  owin();
 })
+
 
 //funzione verifico la vincita di x
 function xwin() {
@@ -25,7 +34,7 @@ function xwin() {
       ($('.c1').text()=='X') && ($('.c5').text()=='X') && ($('.c9').text()=='X') ||
       ($('.c3').text()=='X') && ($('.c5').text()=='X') && ($('.c7').text()=='X') )
    {
-    alert("X ha vinto!");
+    alert(nameplayer1 + " ha vinto!");
   }
 }
 
@@ -40,6 +49,6 @@ function owin() {
       ($('.c1').text()=='O') && ($('.c5').text()=='O') && ($('.c9').text()=='O') ||
       ($('.c3').text()=='O') && ($('.c5').text()=='O') && ($('.c7').text()=='O') )
    {
-    alert("O ha vinto!");
+    alert(nameplayer2 + " ha vinto!");
   }
 }

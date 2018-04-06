@@ -4,9 +4,20 @@
   padding: 0;
 }
 
-.container {
+.containner {
+  width: 90%;
+  margin: auto;
+}
+
+.giocatori {
+  margin-left: 30%;
+  margin-top: 10px;
+}
+.game {
   width: 300px;
   height: 300px;
+  margin-left: 30%;
+  margin-top: 50px;
 }
 
 .block {
